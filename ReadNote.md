@@ -65,7 +65,7 @@ c.使用class::… 调用非静态方法/变量，也不需要执行构造函数
 
 Yii框架
 -----
-一、YII框架中，使用updateCounter/updateAllCounter（['字段' => 加量]）更新字段增加对应加量
+一、YII2.0中，使用updateCounter/updateAllCounter（['字段' => 加量]）更新字段增加对应加量
 
 二、save，load，validate方法
 1、load()加载数据，validate()验证数据
