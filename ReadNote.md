@@ -65,7 +65,25 @@ c.使用class::… 调用非静态方法/变量，也不需要执行构造函数
 
 Yii框架
 -----
-一、YII2.0中，使用updateCounter/updateAllCounter（['字段' => 加量]）更新字段增加对应加量
+一、updateCounter/updateAllCounter的区别
+在YII2.0中，使用updateCounter/updateAllCounter（['字段' => 加量]）更新字段增加对应加量
+
+区别：
+updateCounter是非静态方法，是在BaseActiveRecord核心类里的方法，需要new之后（创建对象后）才能使用
+eg:
+
+    $user = new Userinfo();
+    $user->id = 1;
+    $user->updateCounter(['point' => $num]);
+
+
+
+updateAllCounter是静态方法，是在ActiveRecord核心类里的方法，可以用:::直接调用
+eg:
+
+    Userinfo::updateAllCounter(['point' => $num]);
+
+上面代码完成的是对userinfo表里的id字段为1的用户point进行加$num的操作
 
 二、save，load，validate方法
 1、load()加载数据，validate()验证数据
